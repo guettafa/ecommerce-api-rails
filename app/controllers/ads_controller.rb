@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  before_action :set_ad, only: %i[ show update destroy ]
+  before_action :set_ad, only: %i[show update destroy]
 
   # GET /ads
   def index
@@ -39,6 +39,7 @@ class AdsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_ad
       @ad = Ad.find(params[:id])
@@ -46,6 +47,6 @@ class AdsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ad_params
-      params.require(:ad).permit(:title, :description)
+      params.require(:ad).permit(:title, :description, :customer_id)
     end
 end

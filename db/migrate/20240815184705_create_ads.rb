@@ -4,6 +4,8 @@ class CreateAds < ActiveRecord::Migration[7.1]
       t.string :title
       t.string :description
 
+      t.references :customer
+
       t.timestamps
     end
   end
